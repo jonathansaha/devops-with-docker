@@ -1,0 +1,43 @@
+Script started on 2022-02-18 22:07:35+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="107" LINES="29"]
+]0;jon@leechbane: ~jon@leechbane:~$ sudo docker system prune
+[sudo] password for jon: 
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+cea7f3409ab16ba7cf5c7cd5b7e39aa66692b722402e3f94fa1832d112b8a893
+d0199136a1ed9dbf7a6fefa2a9d4774c1e296626d092f9c8b17b7162cd328ebf
+
+Total reclaimed space: 2.186kB
+]0;jon@leechbane: ~jon@leechbane:~$ sudo docker ps -as
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES              SIZE
+a08b63aad732   nginx     "/docker-entrypoint.…"   29 minutes ago   Up 29 minutes   80/tcp    happy_tereshkova   1.09kB (virtual 142MB)
+]0;jon@leechbane: ~jon@leechbane:~$ sudo docker ps -as[Ksudo docker ps -as[K[K[K[K[K[Kstop a08b63aad732
+a08b63aad732
+]0;jon@leechbane: ~jon@leechbane:~$ sudo docker stop a08b63aad732[11Pps -assystem prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+a08b63aad7324cf403230c6557784d053704d52e7333448b83ba703c1bc6e553
+
+Total reclaimed space: 1.093kB
+]0;jon@leechbane: ~jon@leechbane:~$ sudo docker system prunetop a08b63aad732[11Pps -as
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES     SIZE
+]0;jon@leechbane: ~jon@leechbane:~$ docker images
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json": dial unix /var/run/docker.sock: connect: permission denied
+]0;jon@leechbane: ~jon@leechbane:~$ docker images[1@s[1@u[C[1@d[1@o[1@ 
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+nginx        latest    c316d5a335a5   3 weeks ago   142MB
+]0;jon@leechbane: ~jon@leechbane:~$ exit
+exit
+
+Script done on 2022-02-18 22:09:41+00:00 [COMMAND_EXIT_CODE="0"]
