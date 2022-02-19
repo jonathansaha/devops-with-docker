@@ -1,0 +1,5 @@
+jon@leechbane:~$ sudo docker ps -as
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES     SIZE
+jon@leechbane:~$ sudo docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+jon@leechbane:~$
