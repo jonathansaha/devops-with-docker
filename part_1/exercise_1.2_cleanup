@@ -1,7 +1,0 @@
-
-jon@leechbane:~$ sudo docker ps -as
-CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES     SIZE
-jon@leechbane:~$ sudo docker images
-REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
-nginx        latest    c316d5a335a5   3 weeks ago   142MB
-jon@leechbane:~$
