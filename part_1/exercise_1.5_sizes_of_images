@@ -1,0 +1,25 @@
+root@leechbane:/home/jon# docker image ls -a
+REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   11 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   11 months ago   15.7MB
+root@leechbane:/home/jon# docker run -d -it devopsdockeruh/simple-web-service:alpine
+51bfaa8dd737f2d96dd131bd77af1a4946ae14029d419423401b8316ab5179ba
+root@leechbane:/home/jon# docker ps
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+51bfaa8dd737   devopsdockeruh/simple-web-service:alpine   "/usr/src/app/server"   4 seconds ago   Up 4 seconds             silly_lamport
+root@leechbane:/home/jon# docker exec -it silly_lamport sh -c 'tail -f ./text.log'
+2022-02-19 19:28:13 +0000 UTC
+2022-02-19 19:28:15 +0000 UTC
+2022-02-19 19:28:17 +0000 UTC
+2022-02-19 19:28:19 +0000 UTC
+2022-02-19 19:28:21 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-19 19:28:23 +0000 UTC
+2022-02-19 19:28:25 +0000 UTC
+2022-02-19 19:28:27 +0000 UTC
+2022-02-19 19:28:29 +0000 UTC
+2022-02-19 19:28:31 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-19 19:28:33 +0000 UTC
+2022-02-19 19:28:35 +0000 UTC
+^Croot@leechbane:/home/jon#
