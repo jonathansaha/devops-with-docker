@@ -1,0 +1,15 @@
+root@leechbane:/home/jon# touch text.log
+root@leechbane:/home/jon# ls
+dockerfile  script.sh  text.log
+root@leechbane:/home/jon# docker run -v $(pwd)/text.log:/usr/src/app/text.log -it devopsdockeruh/simple-web-service
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+^Z^X^Croot@leechbane:/home/jon# cat text.log
+2022-02-21 12:03:15 +0000 UTC
+2022-02-21 12:03:17 +0000 UTC
+2022-02-21 12:03:19 +0000 UTC
+2022-02-21 12:03:21 +0000 UTC
+root@leechbane:/home/jon#
