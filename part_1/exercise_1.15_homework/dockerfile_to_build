@@ -1,0 +1,21 @@
+------------------directory details-------------------------------------------
+root@leechbane:/home/jon# ls
+dockerfile  example-backend  example-frontend  index.html  material-applications
+
+----------------------------dockerfile to build image-------------------------
+root@leechbane:/home/jon# cat dockerfile
+FROM httpd
+COPY ./index.html /usr/local/apache2/htdocs/
+EXPOSE 80
+RUN httpd
+
+-----------------------------html file to put in image-----------------------
+root@leechbane:/home/jon# cat index.html
+Hello. This is a test page. Your http server is working.
+
+-------------------------build command---------------------------------------
+root@leechbane:/home/jon# docker build . -t http-test
+
+-----------------------------pushing to docker hub---------------------------
+root@leechbane:/home/jon# docker tag http-test jonathansaha/http-test
+root@leechbane:/home/jon# docker push jonathansaha/http-test
