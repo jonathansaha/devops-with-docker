@@ -1,3 +1,5 @@
+Docker Hub URL - https://hub.docker.com/r/jonathansaha/http-test
+
 Run "docker run -p 80:80 jonathansaha/http-test" to download and run this image.
 
 Run "docker pull jonathansaha/http-test" to only download the image.
