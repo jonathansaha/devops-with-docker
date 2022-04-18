@@ -4,6 +4,8 @@ Run "docker run -p 80:80 jonathansaha/http-test" to download and run this image.
 
 Run "docker pull jonathansaha/http-test" to only download the image.
 
-Go to http://localhost:80 from a browser and check if it prints - "Hello. This is a test page. Your http server is working."
+Go to http://localhost:80 from a browser and check if it prints anything.
+
+This image was build on top of httpd(The Apache HTTP Server Project) and added a barebone html file that opens at port 80. Purpose is to check if there is any reachability issue to docker hosted webpage.
 
 Note: Please check the IP address for URL if docker is not running from localhost. Also check firewall setting for port 80 in this case.
