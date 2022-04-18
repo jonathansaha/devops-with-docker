@@ -1,0 +1,18 @@
+root@leechbane:/home/jon/example-backend# pwd
+/home/jon/example-backend
+root@leechbane:/home/jon/example-backend# ls
+app.go       cache   controller  go.mod  pgconnection  router
+app_test.go  common  dockerfile  go.sum  README.md
+root@leechbane:/home/jon/example-backend# cat dockerfile
+FROM golang:1.16
+
+EXPOSE 8080
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN go build
+
+CMD ["./server"]
+root@leechbane:/home/jon/example-backend# docker build . -t example-backend && docker run -p 8080:8080 example-backend
