@@ -1,0 +1,52 @@
+------------------directory details---------------------------------
+root@leechbane:/home/jon# ls
+dockerfile  example-backend  example-frontend  material-applications
+
+root@leechbane:/home/jon# ls example-frontend/
+dockerfile  package.json  package-lock.json  public  README.md  src
+
+root@leechbane:/home/jon# ls example-backend/
+app.go       cache   controller  go.mod  pgconnection  router
+app_test.go  common  dockerfile  go.sum  README.md
+
+
+-----------------------frontend dockerfile-------------------------
+root@leechbane:/home/jon# cat example-frontend/dockerfile
+FROM node:lts-bullseye
+
+EXPOSE 5000
+
+ENV REACT_APP_BACKEND_URL=http://10.20.252.100:8080
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN npm install
+RUN npm run build
+RUN npm install -g serve
+
+CMD ["serve", "-s", "-l", "5000", "build"]
+
+
+---------------------------backend dockerfile----------------------
+root@leechbane:/home/jon# cat example-backend/dockerfile
+FROM golang:1.16
+
+EXPOSE 8080
+
+ENV REQUEST_ORIGIN=http://10.20.252.100:5000
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN go build
+
+CMD ["./server"]
+
+
+-------------------------commands----------------------------------
+#docker build ./example-frontend/ -t example-frontend && docker build ./example-backend/ -t example-backend
+
+#docker run -dp 5000:5000 example-frontend && docker run -dp 8080:8080 example-backend
