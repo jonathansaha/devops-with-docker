@@ -8,4 +8,4 @@
 #heroku container:release web --app exercise-1-16-heroku-jonathan
 
 ------------------URL--------------------------------------------------------
-Heroku URL : https://exercise-1-16-heroku-jonathan.herokuapp.com/
+Heroku URL : https://exercise-1-16-heroku-jonathan.herokuapp.com
