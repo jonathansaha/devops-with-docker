@@ -1,0 +1,11 @@
+-------------commands used---------------------------------------------------
+#docker pull devopsdockeruh/coursepage
+#snap install --classic heroku
+#heroku login -i
+#heroku container:login
+#docker tag devopsdockeruh/coursepage registry.heroku.com/exercise-1-16-heroku-jonathan/web
+#docker push registry.heroku.com/exercise-1-16-heroku-jonathan/web
+#heroku container:release web --app exercise-1-16-heroku-jonathan
+
+------------------URL--------------------------------------------------------
+Heroku URL : https://exercise-1-16-heroku-jonathan.herokuapp.com/
