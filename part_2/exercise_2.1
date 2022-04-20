@@ -1,0 +1,29 @@
+--------------------create the file first-------------------------------
+root@leechbane:/home/jon# touch text.log
+
+--------------------docker compose file---------------------------------
+root@leechbane:/home/jon# cat docker-compose.yml 
+version: '3.3'
+services:
+    simple-web-service:
+      image: devopsdockeruh/simple-web-service
+      volumes:
+        - ./text.log:/usr/src/app/text.log
+      container_name: simple-web-service
+
+---------------------output at text.log---------------------------------
+root@leechbane:/home/jon# cat text.log 
+2022-04-20 09:18:17 +0000 UTC
+2022-04-20 09:18:19 +0000 UTC
+2022-04-20 09:18:21 +0000 UTC
+2022-04-20 09:18:23 +0000 UTC
+2022-04-20 09:18:25 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-04-20 09:18:27 +0000 UTC
+2022-04-20 09:18:29 +0000 UTC
+2022-04-20 09:18:31 +0000 UTC
+2022-04-20 09:18:33 +0000 UTC
+2022-04-20 09:18:35 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-04-20 09:18:37 +0000 UTC
+2022-04-20 09:18:39 +0000 UTC
